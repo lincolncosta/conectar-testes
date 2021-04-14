@@ -109,16 +109,16 @@ def preenche_etapa2_formulario(context):
 
 @then(u'devo ser redirecionado para a terceira etapa')
 def checa_terceira_etapa_cadastro(context):
-    wait = WebDriverWait(context.web, 3)
+    wait = WebDriverWait(context.web, 5)
     wait.until(ec.visibility_of_element_located(
         (By.CLASS_NAME, 'experiencias-do-usuario')), message='Elemento com a classe "experiencias-do-usuario" era esperado e não foi encontrado.')
 
 
 @given(u'estou na pagina da terceira etapa do cadastro')
 def checa_pagina_terceira_etapa(context):
-    if 'Nos conte sua experiência' not in context.web.page_source:
-        raise Exception(
-            'Texto "Nos conte sua experiência" era esperado e não foi encontrado.')
+    wait = WebDriverWait(context.web, 5)
+    wait.until(ec.visibility_of_element_located(
+        (By.CLASS_NAME, 'experiencias-do-usuario')), message='Elemento com a classe "experiencias-do-usuario" era esperado e não foi encontrado.')
 
 
 @when(u'clico no botao de adicionar cadastro de Educação')
@@ -341,7 +341,8 @@ def preenche_atuacao_projeto_formulario(context):
     context.projeto_concluido_check.click()
 
     # Mês inicial
-    context.initial_month_input = context.web.find_element_by_id('initialMonth')
+    context.initial_month_input = context.web.find_element_by_id(
+        'initialMonth')
     context.initial_month_input.send_keys(5)
 
     wait = WebDriverWait(context.web, 3)
