@@ -34,3 +34,7 @@ Quando clico no botao de adicionar cadastro de Projeto
 Quando preencho a etapa de Projeto do formulario de cadastro
 Quando clico no botao de salvar cadastro de Projeto
 Entao uma nova atuação em Projeto deve ser cadastrada
+
+# Escrever cenário das áreas de atuação
+
+# Escrever cenário das habilidades e ferramentas
