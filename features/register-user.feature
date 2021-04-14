@@ -28,4 +28,9 @@ Quando preencho a etapa de Atuação Profissional do formulario de cadastro
 Quando clico no botao de salvar cadastro de Atuação Profissional
 Entao uma nova atuação profissional deve ser cadastrada
 
-# TO-DO: Escrever cenário de Projetos
+Cenario: Preencher informações de Projeto
+Dado estou na pagina da terceira etapa do cadastro
+Quando clico no botao de adicionar cadastro de Projeto
+Quando preencho a etapa de Projeto do formulario de cadastro
+Quando clico no botao de salvar cadastro de Projeto
+Entao uma nova atuação em Projeto deve ser cadastrada

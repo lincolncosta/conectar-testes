@@ -256,52 +256,53 @@ def preenche_atuacao_profissional_formulario(context):
     context.nivel_formacao_option.click()
 
     # Mês inicial
-    context.month_input = context.web.find_element_by_id('initialMonth')
-    context.month_input.send_keys(5)
+    context.initial_month_input = context.web.find_element_by_id(
+        'initialMonth')
+    context.initial_month_input.send_keys(5)
 
     wait = WebDriverWait(context.web, 3)
     wait.until(ec.element_to_be_clickable(
         (By.CSS_SELECTOR, 'div.react-select__menu')), message='Select de "Mês inicial" era esperado e não foi encontrado.')
 
-    context.month_option = context.web.find_element_by_xpath(
+    context.initial_month_option = context.web.find_element_by_xpath(
         '//div[contains(@class, "react-select__option")]')
-    context.month_option.click()
+    context.initial_month_option.click()
 
     # Ano inicial
-    context.month_input = context.web.find_element_by_id('initialYear')
-    context.month_input.send_keys(1990)
+    context.initial_year_input = context.web.find_element_by_id('initialYear')
+    context.initial_year_input.send_keys(1990)
 
     wait = WebDriverWait(context.web, 3)
     wait.until(ec.element_to_be_clickable(
         (By.CSS_SELECTOR, 'div.react-select__menu')), message='Select de "Ano inicial" era esperado e não foi encontrado.')
 
-    context.month_option = context.web.find_element_by_xpath(
+    context.initial_year_option = context.web.find_element_by_xpath(
         '//div[contains(@class, "react-select__option")]')
-    context.month_option.click()
+    context.initial_year_option.click()
 
     # Mês final
-    context.month_input = context.web.find_element_by_id('finalMonth')
-    context.month_input.send_keys(5)
+    context.final_month_input = context.web.find_element_by_id('finalMonth')
+    context.final_month_input.send_keys(5)
 
     wait = WebDriverWait(context.web, 3)
     wait.until(ec.element_to_be_clickable(
         (By.CSS_SELECTOR, 'div.react-select__menu')), message='Select de "Mês final" era esperado e não foi encontrado.')
 
-    context.month_option = context.web.find_element_by_xpath(
+    context.final_month_option = context.web.find_element_by_xpath(
         '//div[contains(@class, "react-select__option")]')
-    context.month_option.click()
+    context.final_month_option.click()
 
     # Ano final
-    context.month_input = context.web.find_element_by_id('finalYear')
-    context.month_input.send_keys(1995)
+    context.final_year_input = context.web.find_element_by_id('finalYear')
+    context.final_year_input.send_keys(1995)
 
     wait = WebDriverWait(context.web, 3)
     wait.until(ec.element_to_be_clickable(
         (By.CSS_SELECTOR, 'div.react-select__menu')), message='Select de "Ano final" era esperado e não foi encontrado.')
 
-    context.month_option = context.web.find_element_by_xpath(
+    context.final_year_option = context.web.find_element_by_xpath(
         '//div[contains(@class, "react-select__option")]')
-    context.month_option.click()
+    context.final_year_option.click()
 
 
 @when(u'clico no botao de salvar cadastro de Atuação Profissional')
@@ -316,3 +317,88 @@ def checa_atuacao_profissional_cadastrada(context):
     wait = WebDriverWait(context.web, 3)
     context.resultado_busca_item1 = wait.until(ec.presence_of_element_located(
         (By.CLASS_NAME, 'atuacao-profissional-cadastrada')), message='Registro de "Atuação Profissional" era esperado e não foi encontrado.')
+
+
+@when(u'clico no botao de adicionar cadastro de Projeto')
+def clica_adicionar_projeto(context):
+    context.adicionar_educacao = context.web.find_element_by_xpath(
+        '//*[@id="root"]/div/div/section[3]/h2/button')
+    context.adicionar_educacao.click()
+
+
+@when(u'preencho a etapa de Projeto do formulario de cadastro')
+def preenche_atuacao_projeto_formulario(context):
+    context.projeto_nome_input = context.web.find_element_by_id('nome')
+    context.projeto_nome_input.send_keys(name_generator())
+
+    context.cargo_input = context.web.find_element_by_id('cargo')
+    context.cargo_input.send_keys(name_generator())
+
+    context.descricao_input = context.web.find_element_by_id('descricao')
+    context.descricao_input.send_keys(description_generator())
+
+    context.projeto_concluido_check = context.web.find_element_by_xpath(
+        '//*[@id="root"]/div/div/section[3]/form/aside/section[3]/div/label[3]')
+    context.projeto_concluido_check.click()
+
+    # Mês inicial
+    context.initial_month_input = context.web.find_element_by_id('initialMonth')
+    context.initial_month_input.send_keys(5)
+
+    wait = WebDriverWait(context.web, 3)
+    wait.until(ec.element_to_be_clickable(
+        (By.CSS_SELECTOR, 'div.react-select__menu')), message='Select de "Mês inicial" era esperado e não foi encontrado.')
+
+    context.initial_month_option = context.web.find_element_by_xpath(
+        '//div[contains(@class, "react-select__option")]')
+    context.initial_month_option.click()
+
+    # Ano inicial
+    context.initial_year_input = context.web.find_element_by_id('initialYear')
+    context.initial_year_input.send_keys(1990)
+
+    wait = WebDriverWait(context.web, 3)
+    wait.until(ec.element_to_be_clickable(
+        (By.CSS_SELECTOR, 'div.react-select__menu')), message='Select de "Ano inicial" era esperado e não foi encontrado.')
+
+    context.initial_year_option = context.web.find_element_by_xpath(
+        '//div[contains(@class, "react-select__option")]')
+    context.initial_year_option.click()
+
+    # Mês final
+    context.final_month_input = context.web.find_element_by_id('finalMonth')
+    context.final_month_input.send_keys(5)
+
+    wait = WebDriverWait(context.web, 3)
+    wait.until(ec.element_to_be_clickable(
+        (By.CSS_SELECTOR, 'div.react-select__menu')), message='Select de "Mês final" era esperado e não foi encontrado.')
+
+    context.final_month_option = context.web.find_element_by_xpath(
+        '//div[contains(@class, "react-select__option")]')
+    context.final_month_option.click()
+
+    # Ano final
+    context.final_year_input = context.web.find_element_by_id('finalYear')
+    context.final_year_input.send_keys(1995)
+
+    wait = WebDriverWait(context.web, 3)
+    wait.until(ec.element_to_be_clickable(
+        (By.CSS_SELECTOR, 'div.react-select__menu')), message='Select de "Ano final" era esperado e não foi encontrado.')
+
+    context.final_year_option = context.web.find_element_by_xpath(
+        '//div[contains(@class, "react-select__option")]')
+    context.final_year_option.click()
+
+
+@when(u'clico no botao de salvar cadastro de Projeto')
+def clica_salvar_projeto(context):
+    context.adicionar_educacao = context.web.find_element_by_xpath(
+        '//*[@id="root"]/div/div/section[3]/form/aside/section[5]/button[1]')
+    context.adicionar_educacao.click()
+
+
+@then(u'uma nova atuação em Projeto deve ser cadastrada')
+def checa_projeto_cadastrado(context):
+    wait = WebDriverWait(context.web, 3)
+    context.resultado_busca_item1 = wait.until(ec.presence_of_element_located(
+        (By.CLASS_NAME, 'projeto-cadastrado')), message='Registro de atuação em "Projeto" era esperado e não foi encontrado.')
