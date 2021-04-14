@@ -214,7 +214,7 @@ def clica_salvar_educacao(context):
 def checa_educacao_cadastrada(context):
     wait = WebDriverWait(context.web, 3)
     context.resultado_busca_item1 = wait.until(ec.presence_of_element_located(
-        (By.CLASS_NAME, 'experiencia-cadastrada')), message='Registro de "Experiencia Cadastrada" era esperado e não foi encontrado.')
+        (By.CLASS_NAME, 'educacao-cadastrada')), message='Registro de "Experiencia Cadastrada" era esperado e não foi encontrado.')
 
 
 @when(u'clico no botao de adicionar cadastro de Atuação Profissional')
@@ -232,8 +232,8 @@ def preenche_atuacao_profissional_formulario(context):
     context.cargo_input = context.web.find_element_by_id('cargo')
     context.cargo_input.send_keys(name_generator())
 
-    context.cargo_input = context.web.find_element_by_id('descricao')
-    context.cargo_input.send_keys(name_generator())
+    context.descricao_input = context.web.find_element_by_id('descricao')
+    context.descricao_input.send_keys(description_generator())
 
     # Vínculo
     context.nivel_formacao_arrow = context.web.find_element_by_xpath(

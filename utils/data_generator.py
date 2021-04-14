@@ -21,4 +21,4 @@ def password_generator():
     return "@Forabolso13"
 
 def description_generator():
-    return name_generator() + name_generator()
+    return name_generator() + ' ' + name_generator() + ' ' + name_generator()
