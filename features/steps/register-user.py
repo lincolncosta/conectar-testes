@@ -4,7 +4,6 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.support import expected_conditions as ec
-import time
 from utils.data_generator import name_generator, email_generator, username_generator, password_generator, description_generator
 
 
