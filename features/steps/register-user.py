@@ -98,12 +98,12 @@ def preenche_etapa2_formulario(context):
         '//div[contains(@class, "react-select__option")]')
     context.year_option.click()
 
-    context.idealizador_check = context.web.find_element_by_xpath(
-        '//*[@id="root"]/div/form/div/section[2]/fieldset[1]/aside/div/label')
-    context.idealizador_check.click()
+    context.idealizador_label = context.web.find_element_by_xpath(
+        '//*[@id="root"]/div/form/div/div/fieldset[1]/aside/div/label')
+    context.idealizador_label.click()
 
     context.continuar_btn = context.web.find_element_by_xpath(
-        '//*[@id="root"]/div/form/div/section[3]/button[2]')
+        '//*[@id="root"]/div/form/div/section[2]/button[2]')
     context.continuar_btn.click()
 
 
